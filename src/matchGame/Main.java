@@ -87,6 +87,10 @@ public class Main extends JFrame{
 		timer.stop(); 																	//Stops the timer.
 		game.addComputerCharRound();		                                            //Add the random color sequence into computer's dynamic array.
 		lblInstructions.setText("Next round!");		                                    //Show information into a label.
+		btnRedLight.setEnabled(false);                                           		//Disable button.
+		btnGreenLight.setEnabled(false);                                         		//Disable button.
+		btnBlueLight.setEnabled(false);                                          		//Disable button.
+		btnYellowLight.setEnabled(false);                                        		//Disable button.
 		timer.start();                                                                  //Starts the timer.
 	}                                                                                   
 																						
@@ -112,6 +116,10 @@ public class Main extends JFrame{
 		game.addComputerCharStage();		                                            //Add the random color sequence into computer's dynamic array.
 		lblInstructions.setText("Stage: " + pointStage);		                        //Show information into a label.
 		game.playSoundNextStage();                                                      //Play a sound
+		btnRedLight.setEnabled(false);                                           		//Disable button.
+		btnGreenLight.setEnabled(false);                                         		//Disable button.
+		btnBlueLight.setEnabled(false);                                         		//Disable button.
+		btnYellowLight.setEnabled(false);                                       		//Disable button.
 		timer.start();                                                                  //Starts the timer.
 	}                                                                                   
 																						
@@ -139,7 +147,7 @@ public class Main extends JFrame{
 			lblScorePoints.setText("");                                                 //Hide the score.
 		}else {                                                                         //else
 			lblScorePoints.setText("" + game.getScore());		                        //Show the score.
-		}                                                                               //
+		}                                                                               
 		btnRedLight.setEnabled(false);                                                  //Disable button.
 		btnGreenLight.setEnabled(false);                                                //Disable button.
 		btnBlueLight.setEnabled(false);                                                 //Disable button.
@@ -170,8 +178,7 @@ public class Main extends JFrame{
 		counter++;		                                                                //Add to counter.
 		if(counter == 4) {                                                              //Test is counter is equal to 4 to jump to the next stage.
 			game.pause(300);			                                                //Pause all threads.
-			//nextStage();						                                        //Go to next stage.
-			nextRound();							                                    //Go to next round.
+			nextStage();						                                        //Go to next stage.
 		}else {                                                                         //else
 			game.pause(300);                                                            //Pause all threads.
 			nextRound();							                                    //Go to next round.
@@ -255,14 +262,22 @@ public class Main extends JFrame{
 						position++;                                                     //Increase position to get the next index in the array.
 					} else {                                                            //else
 						position = 0;                                                   //Resets the array position.
+						btnRedLight.setEnabled(true);                                   //Disable button.
+						btnGreenLight.setEnabled(true);                                 //Disable button.
+						btnBlueLight.setEnabled(true);                                  //Disable button.
+						btnYellowLight.setEnabled(true);                                //Disable button.
 						timer.stop();                                                   //Stops the timer.
 					}                                                                   
 				} else {                                                                //else
 					position = 0;                                                       //Resets the position.
 					pointStage = 1;                                                     //Resets the stage points.
 					counter = 1;                                                        //Resets the counter.
+					btnRedLight.setEnabled(true);                                       //Disable button.
+					btnGreenLight.setEnabled(true);                                     //Disable button.
+					btnBlueLight.setEnabled(true);                                      //Disable button.
+					btnYellowLight.setEnabled(true);                                    //Disable button.
 					timer.stop();                                                       //Stops the timer.
-				}                                                                       
+				} 
 			}                                                                           
 		});                                                                             
 																						
@@ -303,11 +318,11 @@ public class Main extends JFrame{
 				game = new Game();                                                      //Instantiates a new game object.
 				lblScorePoints.setText("" + game.getScore());                           //Show information into a label to the player.
 				position = 0;                                                           //Resets the position.
+				btnRedLight.setEnabled(false);                                           //Disable button.
+				btnGreenLight.setEnabled(false);                                         //Disable button.
+				btnBlueLight.setEnabled(false);                                          //Disable button.
+				btnYellowLight.setEnabled(false);                                        //Disable button.
 				timer.start();                                                          //Starts the timer.
-				btnRedLight.setEnabled(true);                                           //Disable button.
-				btnGreenLight.setEnabled(true);                                         //Disable button.
-				btnBlueLight.setEnabled(true);                                          //Disable button.
-				btnYellowLight.setEnabled(true);                                        //Disable button.
 			}                                                                           
 		});                                                                             
 																						
