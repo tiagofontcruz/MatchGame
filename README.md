@@ -18,7 +18,7 @@ The program consists of a replica of Match Game.
 ### Installing
 
 In order to run the program you will need to download it from the link below:
-https://github.com/tiagofontcruz/MatchGame.git
+https://github.com/tiagofontcruz/MatchGame/archive/refs/heads/main.zip
 
 Unzip the content of the file in your local repository 
 
